@@ -12,7 +12,7 @@ from scipy.io import arff
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+# import scikitplot as skplt
 import sklearn
 from sklearn import preprocessing
 from sklearn import datasets 
@@ -91,14 +91,16 @@ def plot_pr_curve(X_test, y_test, all_clfs, clf_names):
     return pr_scores
 
 def plot_multiclass_roc(y_true, y_probas, clf_name):
-    skplt.metrics.plot_roc(y_true, y_probas, title=clf_name+" ROC Curve", figsize=(10,8))
-    skplt.metrics.plt.savefig(image_path+file.split('.')[0]+'-'+clf_name+'_multiclass_roc')
-    skplt.metrics.plt.show()
+#     skplt.metrics.plot_roc(y_true, y_probas, title=clf_name+" ROC Curve", figsize=(10,8))
+#     skplt.metrics.plt.savefig(image_path+file.split('.')[0]+'-'+clf_name+'_multiclass_roc')
+#     skplt.metrics.plt.show()
+    pass
     
 def plot_multiclass_pr(y_true, y_probas, clf_name):
-    skplt.metrics.plot_precision_recall(y_true, y_probas, title=clf_name+" PR Curve", figsize=(10,8))
-    skplt.metrics.plt.savefig(image_path+file.split('.')[0]+'-'+clf_name+'_multiclass_pr')
-    skplt.metrics.plt.show()
+#     skplt.metrics.plot_precision_recall(y_true, y_probas, title=clf_name+" PR Curve", figsize=(10,8))
+#     skplt.metrics.plt.savefig(image_path+file.split('.')[0]+'-'+clf_name+'_multiclass_pr')
+#     skplt.metrics.plt.show()
+    pass
 
 
 # In[3]:
@@ -207,7 +209,7 @@ def train_NeuralNetwork():
     param_distributions = {
         'hidden_layer_sizes' : [(100,50,10)],
         'learning_rate_init' : scipy.stats.uniform(0.001, 0.005),
-        'max_iter' : scipy.stats.randint(200,300)
+        'max_iter' : scipy.stats.randint(200,500)
     }
     randcv = sklearn.model_selection.RandomizedSearchCV(nn,param_distributions,n_iter=10,cv=3,n_jobs=-1,
                                                         iid=False,random_state=0)
@@ -324,7 +326,7 @@ df10 = pd.DataFrame(data10)
 df10 = encode_labels(df10)
 
 
-# In[11]:
+# In[6]:
 
 
 def run_all_clfs():
@@ -347,11 +349,9 @@ def run_all_clfs():
 
     plot_roc_curve(X_test,y_test,all_clfs,clf_names)
     plot_pr_curve(X_test,y_test,all_clfs,clf_names)
-    all_clfs.clear()
-    clf_names.clear()
 
 
-# In[12]:
+# In[7]:
 
 
 # %%time
