@@ -81,10 +81,12 @@
   <img src="./regression/image/winequality-white_mse-r2.png" width="420">
 </p>
 
-## Run
+## Requirement
 
-- Install all required libraries. e.g. `pip install sklearn`
-- Run jupyter notebook
-
+- Install [Anaconda](https://www.anaconda.com/)
+- Create a conda env that contain python 3.7.5: `conda create -n your_env_name python=3.7.5`
+- Activate the environment (do this every time you open a new terminal): `conda activate your_env_name`
+- Install the requirements into this conda env: `pip install --user --requirement requirements.txt`
+- Run the jupyter notebook: `jupyter notebook`
 ## Reference
 - [scikit-learn](https://scikit-learn.org/stable/)
