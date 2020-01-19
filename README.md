@@ -1,5 +1,5 @@
 # Comparison of Machine Learning Prediction Models
-
+Compared performance of different ML algorithms in both classification and regression tasks using scikit-learn framewok.
 ## Classification
 
 ### Dataset
